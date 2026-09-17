@@ -1,0 +1,304 @@
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.bookingCard {
+  position: sticky;
+  top: calc(var(--header-height) + 24px);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-booking-card);
+  background: var(--color-bg-primary);
+}
+
+/* Price Row */
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+
+.priceGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.price {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+}
+
+.price strong {
+  font-weight: var(--font-weight-semibold);
+}
+
+.perNight {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.ratingGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.starIcon {
+  color: var(--color-star);
+}
+
+.ratingVal {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.reviewCount {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* Date Grid */
+.dateGroup {
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+  padding: 0;
+}
+
+.dateGrid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+.dateDivider {
+  width: 1px;
+  background: var(--color-border-dark);
+}
+
+.dateField {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3) var(--space-4);
+  gap: 2px;
+}
+
+.dateLabel {
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+}
+
+.dateInput {
+  border: none;
+  outline: none;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dateInput:focus {
+  outline: none;
+}
+
+/* Guest Row */
+.guestRow {
+  border-top: 1px solid var(--color-border-dark);
+  padding: var(--space-3) var(--space-4);
+}
+
+.guestField {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.guestSelect {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.guestInput {
+  border: none;
+  outline: none;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  padding-right: var(--space-5);
+  width: 100%;
+}
+
+.selectArrow {
+  position: absolute;
+  right: 0;
+  color: var(--color-text-primary);
+  pointer-events: none;
+}
+
+/* Reserve Button */
+.reserveBtn {
+  width: 100%;
+  padding: 14px var(--space-4);
+  background: linear-gradient(135deg, #e31c5f, #ff385c);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  margin-bottom: var(--space-3);
+}
+
+.reserveBtn:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.reserveBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.reserveBtn:focus-visible {
+  outline: 3px solid rgba(255, 56, 92, 0.4);
+  outline-offset: 2px;
+}
+
+.reserveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.reserveBtn.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.reserveBtn.errorState {
+  animation: shake 0.35s ease-in-out;
+  background: linear-gradient(135deg, #c13515, #e00b41);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.btnSpinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.validationError {
+  background: #fff0f0;
+  border: 1px solid #ffcccc;
+  border-radius: var(--radius-md, 8px);
+  padding: 8px 12px;
+  color: #c13515;
+  font-size: var(--font-size-sm, 13px);
+  margin-bottom: var(--space-3, 12px);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.noChargeNote {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+/* Price Breakdown */
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.breakdownRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.breakdownLabel {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.breakdownValue {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+}
+
+.priceDetailsBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-family: var(--font-family);
+  text-decoration: underline;
+  padding: 0;
+}
+
+.infoIcon {
+  color: var(--color-text-tertiary);
+}
+
+.totalDivider {
+  height: 1px;
+  background: var(--color-border-light);
+}
+
+.totalLabel {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.totalValue {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}

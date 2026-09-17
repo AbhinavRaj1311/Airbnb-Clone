@@ -1,0 +1,132 @@
+.gallerySection {
+  position: relative;
+  margin-bottom: var(--space-8);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: var(--space-2);
+  height: var(--gallery-height);
+  border-radius: var(--radius-gallery);
+  overflow: hidden;
+}
+
+.gridRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: var(--color-bg-tertiary);
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+}
+
+.imageWrapper:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: -3px;
+  z-index: 1;
+}
+
+.mainImage {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.gridImage {
+  /* Fills the 2x2 grid cells */
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  display: block;
+}
+
+.imageHidden {
+  opacity: 0;
+}
+
+.imageLoaded {
+  opacity: 1;
+}
+
+.imageWrapper:hover .galleryImage {
+  transform: scale(1.03);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background var(--transition-base);
+  pointer-events: none;
+}
+
+.imageWrapper:hover .imageOverlay {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.imageSkeleton {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg-tertiary);
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+/* Show All Photos Button */
+.showAllBtn {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 7px 14px;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-text-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  font-family: var(--font-family);
+}
+
+.showAllBtn:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.showAllBtn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+    height: 300px;
+  }
+
+  .gridRight {
+    display: none;
+  }
+
+  .mainImage {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}

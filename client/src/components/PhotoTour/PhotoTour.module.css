@@ -1,0 +1,172 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn var(--transition-base) ease;
+}
+
+/* Tour Header */
+.tourHeader {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-8);
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border-light);
+  gap: var(--space-4);
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 12px;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  font-family: var(--font-family);
+  text-decoration: underline;
+}
+
+.closeBtn:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.tourTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.headerRight {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sectionNav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+}
+
+.navLink {
+  padding: 8px var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+/* Tour Content */
+.tourContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-8) var(--space-16);
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Sections */
+.section {
+  margin-bottom: var(--space-12);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  padding-top: var(--space-2);
+}
+
+.sectionImages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.imageCard {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: var(--color-bg-tertiary);
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+.imageCard:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.imageCardFull {
+  aspect-ratio: 4 / 3;
+}
+
+.imageCard:not(.imageCardFull) {
+  aspect-ratio: 4 / 3;
+}
+
+.tourImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.imageCard:hover .tourImage {
+  transform: scale(1.02);
+}
+
+.imageHover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background var(--transition-base);
+  pointer-events: none;
+}
+
+.imageCard:hover .imageHover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .tourContent {
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .tourHeader {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .sectionNav {
+    display: none;
+  }
+}

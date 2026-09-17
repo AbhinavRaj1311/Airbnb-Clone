@@ -1,0 +1,54 @@
+.amenitiesSection {
+  /* contained in parent */
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-5);
+}
+
+.amenitiesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  list-style: none;
+  margin-bottom: var(--space-5);
+}
+
+.amenityItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.amenityIcon {
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.amenityLabel {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.showAllBtn {
+  display: inline-block;
+  padding: 11px 20px;
+  border: 1px solid var(--color-text-primary);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  font-family: var(--font-family);
+}
+
+.showAllBtn:hover {
+  background-color: var(--color-bg-secondary);
+}

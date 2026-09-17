@@ -1,0 +1,103 @@
+.categoryNav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 var(--space-8);
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-bg-primary);
+  position: sticky;
+  top: var(--header-height);
+  z-index: 90;
+}
+
+.categoriesTrack {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  flex: 1;
+  /* hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.categoriesTrack::-webkit-scrollbar { display: none; }
+
+.categoryBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-family);
+  color: var(--color-text-tertiary);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.categoryBtn:hover {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-border-medium);
+}
+
+.categoryBtnActive {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.categoryIcon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.categoryLabel {
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+/* Scroll buttons */
+.scrollBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-medium);
+  background: white;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: box-shadow var(--transition-fast);
+  box-shadow: var(--shadow-button);
+}
+.scrollBtn:hover { box-shadow: var(--shadow-card); }
+
+/* Filter button */
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px var(--space-3);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-lg);
+  background: white;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: var(--space-2);
+  flex-shrink: 0;
+  transition: box-shadow var(--transition-fast);
+}
+.filterBtn:hover { box-shadow: var(--shadow-card); }

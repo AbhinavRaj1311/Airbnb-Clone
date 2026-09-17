@@ -1,0 +1,47 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--content-padding);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border-light);
+  margin: var(--space-8) 0;
+}
+
+/* Content Grid: 60% left / 40% right with sticky booking card */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-12);
+  align-items: flex-start;
+}
+
+.leftColumn {
+  min-width: 0; /* prevent overflow */
+}
+
+.rightColumn {
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rightColumn {
+    display: none; /* Hide booking card on small screens */
+  }
+}
